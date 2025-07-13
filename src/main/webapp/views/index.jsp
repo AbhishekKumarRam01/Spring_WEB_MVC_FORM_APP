@@ -241,7 +241,9 @@
                 </tr>
             </table>
             <button type="submit" class="submit-btn glow-effect">REGISTER</button>
+            
         </form:form>
     </div>
+    <a href="viewStudents">View Student</a>
 </body>
 </html>

@@ -50,7 +50,7 @@ public class StudentController {
 	@PostMapping("/save")
 	public String HandleSubmit(Student student, Model model) {
 		System.out.println(student);
-		
+
 		model.addAttribute("msg", "Student Saved");
 		StudentEntity entity = new StudentEntity();
 		entity.setTiming(Arrays.toString(student.getTiming()));
@@ -59,6 +59,13 @@ public class StudentController {
 		loadFormData(model);
 		return "index";
 
+	}
+
+	@GetMapping("/viewStudents")
+	public String getViewStudent(Model model) {
+		List<StudentEntity> Studentlist = repo.findAll();
+		model.addAttribute("students", Studentlist);
+		return "data";
 	}
 
 }
